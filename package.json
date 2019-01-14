@@ -11,7 +11,7 @@
     "lint": "ionic-app-scripts lint",
     "build:prod": "ionic-app-scripts build --aot --prod",
     "prepublish:prod": "npm run build:prod",
-    "publish:prod": "surge www mytask.surge.sh"
+    "publish:prod": "surge www mytask-app.surge.sh"
   },
   "dependencies": {
     "@angular/animations": "5.2.11",
