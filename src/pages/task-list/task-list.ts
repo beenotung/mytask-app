@@ -5,7 +5,7 @@ import {find, upsert} from "../../utils/array";
 import {id} from "../../models/common";
 import {genId, idToString, isIdMatch} from "../../utils/id";
 import {ApiProvider} from "../../providers/api/api";
-import {showToast} from "ioniclib";
+import {showToast} from "ioniclib/utils/toast";
 import {formatTimeLeft} from "../../utils/time";
 import {remove} from "@beenotung/tslib/array";
 import {MINUTE, SECOND} from "@beenotung/tslib/time";

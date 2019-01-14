@@ -21,18 +21,6 @@ function round(x: number) {
   return Math.round(x * p) / p;
 }
 
-function getUnit(d: number): [number, string] {
-  let last = units[0];
-  for (let [size, name] of units) {
-    if (div(d, size) === 0) {
-      return last;
-    }
-    last = [size, name];
-  }
-  return last;
-}
-
-
 export function formatTimeLeft(deadline: number, full = false) {
   let now = Date.now();
   let diff = deadline - now;

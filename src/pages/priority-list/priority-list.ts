@@ -3,7 +3,7 @@ import {IonicPage, NavController, NavParams, ToastController} from 'ionic-angula
 import {ApiProvider} from "../../providers/api/api";
 import {Priority} from "../../models/priority";
 import {genId, isIdMatch} from "../../utils/id";
-import {showToast} from "ioniclib";
+import {showToast} from "ioniclib/utils/toast";
 
 
 @IonicPage()

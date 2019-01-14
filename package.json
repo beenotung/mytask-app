@@ -1,14 +1,17 @@
 {
-  "name": "myapp-tab",
+  "name": "mytask-app",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "author": "Beeno Tung",
+  "homepage": "https://beeno-tung.surge.sh",
   "private": true,
   "scripts": {
     "start": "ionic-app-scripts serve",
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
-    "lint": "ionic-app-scripts lint"
+    "lint": "ionic-app-scripts lint",
+    "build:prod": "ionic-app-scripts build --aot --prod",
+    "prepublish:prod": "npm run build:prod",
+    "publish:prod": "surge www mytask.surge.sh"
   },
   "dependencies": {
     "@angular/animations": "5.2.11",
