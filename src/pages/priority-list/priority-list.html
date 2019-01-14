@@ -1,0 +1,48 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Priority List</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Priority Name</ion-label>
+      <ion-input [(ngModel)]="newPriority.name"></ion-input>
+      <ion-buttons item-end>
+        <button ion-button icon-start (click)="saveNewPriority()">
+          <ion-icon name="create"></ion-icon>
+          Save
+        </button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+  <table fill-width>
+    <thead>
+    <tr>
+      <th>Priority ID</th>
+      <th>Name</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let p of priorities">
+      <td>{{p.id}}</td>
+      <td><ion-item><ion-input [(ngModel)]="p.name"></ion-input></ion-item></td>
+      <td>
+        <ion-buttons>
+          <button ion-button icon-start (click)="updatePriority(p)">
+            <ion-icon name="cloud-upload"></ion-icon>
+            Update
+          </button>
+        </ion-buttons>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+</ion-content>

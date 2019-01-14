@@ -1,0 +1,74 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Task List</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Task Name</ion-label>
+      <ion-input color="primary" [(ngModel)]="newTask.name" placeholder="Briefly describe the new task"></ion-input>
+      <ion-buttons item-end>
+        <button ion-button icon-start color="secondary" (click)="saveNewTask()">
+          <ion-icon name="create"></ion-icon>
+          Save
+        </button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+  <div text-center>
+    <table fill-width>
+      <thead>
+      <tr>
+        <th>Task ID</th>
+        <th>Parent Task</th>
+        <th>Task Name</th>
+        <th>Priority</th>
+        <th>Time Left</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let task of tasks">
+        <td>{{task.id}}</td>
+        <td>
+          <ion-item>
+            <ion-select>
+              <ion-option [value]="undefined"> -</ion-option>
+              <ion-option *ngFor="let t of getPossibleParentTasks(task.id)" [value]="t.id">{{t.name}}</ion-option>
+            </ion-select>
+          </ion-item>
+        </td>
+        <td text-start>{{task.name}}</td>
+        <td>
+          <ion-item>
+            <ion-select [(ngModel)]="task.priority">
+              <ion-option *ngFor="let p of priorities" [value]="p.id">{{p.name}}</ion-option>
+            </ion-select>
+          </ion-item>
+        </td>
+        <td><button ion-button color="light" (click)="changeTaskDeadline(task)">{{taskTimes[task.id]}}</button></td>
+        <td>
+          <ion-buttons>
+            <button ion-button icon-start small (click)="updateTask(task)">
+              <ion-icon name="cloud-upload"></ion-icon>
+              Update
+            </button>
+            <button ion-button icon-start small color="danger" (click)="deleteTask(task)">
+              <ion-icon name="trash"></ion-icon>
+              Delete
+            </button>
+          </ion-buttons>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</ion-content>

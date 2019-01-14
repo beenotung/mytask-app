@@ -12,7 +12,6 @@ log.txt
 .vscode/
 npm-debug.log*
 
-.idea/
 .ionic/
 .sourcemaps/
 .sass-cache/
@@ -21,6 +20,7 @@ npm-debug.log*
 coverage/
 dist/
 node_modules/
+package-lock.json
 tmp/
 temp/
 platforms/
